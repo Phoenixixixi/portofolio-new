@@ -1,0 +1,41 @@
+.gradient-border {
+  --border-width: 1px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: full;
+  height: full;
+  font-family: Lato, sans-serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  color: white;
+
+  border-radius: 10px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      75deg,
+      hsl(220, 10%, 94%),
+      hsl(60, 2%, 8%),
+      hsl(60, 2%, 8%),
+      hsl(60, 2%, 8%),
+      hsl(60, 2%, 8%),
+      hsl(60, 2%, 8%),
+      hsl(60, 2%, 8%),
+      hsl(60, 2%, 8%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: 10px;
+    animation: moveGradient 4s alternate infinite;
+  }
+}

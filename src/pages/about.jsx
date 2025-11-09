@@ -17,7 +17,7 @@ export default function About() {
             className="w-full rounded-lg grayscale-75"
           />
         </div>
-        <div className="flex justify-start col-span-2 ">
+        <div className="flex justify-between col-span-2 ">
           <div className="flex flex-col justify-between">
             <div>
               <p className="scroll-m-20 text-start text-4xl font-extrabold tracking-tight text-balance text-white">

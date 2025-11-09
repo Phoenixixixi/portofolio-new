@@ -69,7 +69,7 @@ export default function Services() {
     >
       <div className="w-full">
         <h2 className="text-white font-bold text-6xl">
-          What I
+          What Can I
           <span className="bg-lime-400 ml-3 px-2 py-1 rounded-lg text-black">
             Do
           </span>

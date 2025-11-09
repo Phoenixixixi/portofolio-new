@@ -5,7 +5,7 @@ export default function Projects() {
     <div className="w-full h-screen px-18 pt-18">
       <div className="flex justify-between">
         <h2 className="text-white text-6xl font-bold">
-          Our Completed <br /> Projects
+          My Completed <br /> Projects
         </h2>
         <SuccessComponents />
       </div>

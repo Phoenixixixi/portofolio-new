@@ -6,7 +6,7 @@ export default function ProjectBlock({ status = true, children, title, src }) {
   const label = status ? 'Available' : 'Not Available'
 
   return (
-    <div className="border border-neutral-100/20 rounded-sm p-3">
+    <div className="border border-neutral-100/20 rounded-sm p-3 pb-8">
       <img src={src} alt={title} className="w-full rounded-sm" />
       <p className="text-3xl mt-8 text-white font-semibold">{title}</p>
       <p className="text-sm text-white mt-4 h-24">{children}</p>

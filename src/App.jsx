@@ -15,7 +15,8 @@ function App() {
       </div>
 
       <div className="body px-18 relative">
-        <BackgroundCircle />
+        <BackgroundCircle cs={'-left-98 -top-2 '} />
+        <BackgroundCircle cs={'left-1/2 top-1/2 translate-y-1/2'} />
         <About />
         <Count />
         <Stack />

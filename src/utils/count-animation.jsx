@@ -9,14 +9,24 @@ import {
 } from 'motion/react'
 import { useEffect } from 'react'
 
-export default function CountAnimate({ number, duration, Cs, value }) {
+export default function CountAnimate({
+  number,
+  duration,
+  Cs,
+  value,
+  isInView,
+}) {
   const count = useMotionValue(0)
   const rounded = useTransform(() => Math.round(count.get()))
 
   useEffect(() => {
-    const controls = animate(count, number, { duration })
-    return () => controls.stop()
-  }, [])
+    if (isInView) {
+      const controls = animate(count, number, { duration })
+      return () => controls.stop()
+    } else {
+      return
+    }
+  }, [isInView])
 
   return (
     <div className="flex">
@@ -24,7 +34,11 @@ export default function CountAnimate({ number, duration, Cs, value }) {
       <span className="text-lime-400">{value.simbol}</span>
       <motion.div
         initial={{ opacity: 0, translateY: 10 }}
-        animate={{ opacity: 1, translateY: 0 }}
+        animate={
+          isInView
+            ? { opacity: 1, translateY: 0 }
+            : { opacity: 0, translateY: 0 }
+        }
         transition={{
           ease: easeIn,
           duration: 1,

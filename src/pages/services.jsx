@@ -63,7 +63,7 @@ export default function Services() {
 
   return (
     <div
-      className="w-full h-screen pt-18 bg-white/5 
+      className="w-full h-full pt-18 bg-white/5 
                  backdrop-blur-xl border border-white/20 
                  rounded-4xl shadow-lg px-18 pb-14"
     >

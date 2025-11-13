@@ -2,6 +2,7 @@ import { Navigation } from '@/components/navigation'
 import StickyCursor from '../components/stickyCursor'
 import { useRef, createContext, useState } from 'react'
 import { isHoverText } from '../utils/isHover' // ✅ import dari file context
+import { easeIn, easeInOut, motion } from 'motion/react'
 
 export default function Home() {
   const refSticky = useRef(null)
@@ -9,7 +10,7 @@ export default function Home() {
 
   return (
     <isHoverText.Provider value={{ isHover, setIsHover }}>
-      <main
+      <motion.main
         className="w-full h-screen navigation
         rounded-b-5xl
       bg-white py-8 px-18 overflow-hidden"
@@ -19,16 +20,24 @@ export default function Home() {
           <Navigation ref={refSticky} />
         </nav>
         <section className="pt-24 relative">
-          <h1
+          <motion.h1
             className={`text-6xl font-semibold text-center ${
               isHover ? 'text-white' : 'text-black'
             } duration-300`}
+            initial={{ y: 300, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 4 }}
           >
             Code with Creativity <br /> Design With Purpose.
-          </h1>
+          </motion.h1>
         </section>
         <div className="relative grid grid-cols-2 mt-32 h-full ">
-          <div className="z-0">
+          <motion.div
+            className="z-0"
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 3 }}
+          >
             <p className="text-left max-w-[23rem]">
               <q></q>
               I’m Muhammad Dustin, a full-stack developer passionate about
@@ -40,18 +49,23 @@ export default function Home() {
             <button className="mt-8 bg-lime-300 px-4 py-2 rounded-full font-semibold shadow-xl">
               Download My CV
             </button>
-          </div>
+          </motion.div>
 
           {/* RIGHT NAME */}
-          <div className="z-20 flex flex-col items-end text-right">
+          <motion.div
+            className="z-20 flex flex-col items-end text-right"
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 3 }}
+          >
             <p className="font-semibold text-2xl leading-tight">
               Muhammad <br /> Dustin
             </p>
             <p className="text-sm font-light mt-2">Fullstack Developer</p>
-          </div>
+          </motion.div>
 
           {/* AVATAR CENTERED */}
-          <img
+          <motion.img
             src="/cartoon.png"
             alt="avatar"
             className="absolute left-1/2 -translate-x-1/2 bottom-[360px] md:w-[340px] 2xl:w-[420px] z-10"
@@ -65,7 +79,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </main>
+      </motion.main>
     </isHoverText.Provider>
   )
 }

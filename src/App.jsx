@@ -6,6 +6,7 @@ import About from './pages/about'
 import Services from './pages/services'
 import Projects from './pages/projects'
 import Contact from './pages/contact'
+import Footer from './pages/footer'
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
         <Projects />
         <Contact />
       </div>
+      {/* <footer>
+        <Footer />
+      </footer> */}
     </>
   )
 }

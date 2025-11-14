@@ -15,7 +15,7 @@ function App() {
         <Home />
       </div>
 
-      <div className="body px-18 relative">
+      <div className="body px-4 md:px-8 xl:px-18 relative">
         <BackgroundCircle cs={'-left-98 -top-2 '} />
         <BackgroundCircle cs={'left-1/2 top-1/2 translate-y-1/2'} />
         <About />
@@ -25,6 +25,8 @@ function App() {
       <div>
         <Services />
         <Projects />
+      </div>
+      <div>
         <Contact />
       </div>
       {/* <footer>

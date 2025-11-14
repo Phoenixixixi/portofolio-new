@@ -79,7 +79,7 @@ export default function index({ stickyElement }) {
           width: cursorSize,
           height: cursorSize,
         }}
-        className={`${styles.cursor}`}
+        className={`${styles.cursor} md:block hidden`}
       ></motion.div>
     </div>
   )

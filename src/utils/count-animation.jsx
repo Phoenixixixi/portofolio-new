@@ -31,7 +31,9 @@ export default function CountAnimate({
   return (
     <div className="flex">
       <motion.pre className={Cs}>{rounded}</motion.pre>
-      <span className="text-lime-400">{value.simbol}</span>
+      <span className="text-lime-400 text-sm md:text-lg xl:text-2xl font-mont">
+        {value.simbol}
+      </span>
       <motion.div
         initial={{ opacity: 0, translateY: 10 }}
         animate={
@@ -43,6 +45,7 @@ export default function CountAnimate({
           ease: easeIn,
           duration: 1,
         }}
+        className={'text-sm md:text-lg xl:text-2xl font-mont'}
       >
         {value.additional}
       </motion.div>

@@ -3,7 +3,7 @@ import './ui/styles/bg-animate.css'
 export default function Index({ src }) {
   return (
     <BackgroundGradientAnimation
-      className={'w-full h-full '}
+      className={'w-full h-full cursor-pointer '}
       containerClassName={' backdrop-blur-xl hover:scale-95 duration-200'}
       firstColor="oklch(64.5% 0.246 16.439)"
       secondColor="oklch(45.2% 0.211 324.591)"
@@ -12,18 +12,21 @@ export default function Index({ src }) {
       interactive="true"
     >
       <div
-        className="w-full h-36 
+        className="w-full h-full xl:h-36 
         border border-white/20 
         rounded-xl 
         shadow-lg 
         overflow-hidden
         flex justify-center
         z-30
+        p-8
+        md:p-4
+        xl:p-0
         "
       >
         {/* optional efek highlight halus */}
 
-        <img src={src} alt="" className="w-14 invert brightness-0" />
+        <img src={src} alt="" className="w-10 xl:w-14 invert brightness-0" />
       </div>
     </BackgroundGradientAnimation>
   )

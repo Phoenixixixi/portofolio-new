@@ -15,7 +15,7 @@ export const Navigation = forwardRef(function index(props, ref) {
         className="w-full md:w-[60%] h-14 px-8 py-4
                 flex flex-row
                 justify-between rounded-full 
-                text-[.6rem] md:text-lg 2xl:text-lg text-neutral-950
+                text-[.6rem] md:text-sm xl:text-lg 2xl:text-lg text-neutral-950
                 hover:text-white duration-100
                 "
         ref={ref}

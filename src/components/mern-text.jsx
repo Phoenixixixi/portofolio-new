@@ -1,9 +1,9 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 export default function MernText({ children }) {
   return (
-    <main className="w-full h-screen relative flex items-center pt-16">
+    <main className="w-full h-screen relative flex items-center pt-16 md:mt-0 mt-82">
       <div className="text-center text-white">
-        <h1 className="text-[10rem] font-semibold tracking-widest leading-none">
+        <h1 className="text-5xl md:text-8xl xl:text-[10rem] font-semibold tracking-widest leading-none">
           MERN
         </h1>
         <p className="text-white/80 text-sm mt-0 tracking-[1rem]">

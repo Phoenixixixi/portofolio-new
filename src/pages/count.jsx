@@ -23,22 +23,24 @@ export default function Count() {
     { number: 100, additional: 'passion', desc: 'for clean code', simbol: '%' },
   ]
   return (
-    <div className="w-full my-24" ref={ref}>
+    <div className="w-full md:my-24 my-42" ref={ref}>
       <GlowingBlock>
-        <div className="grid grid-cols-4 gap-28 text-white">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-28 text-white">
           {list.map((value, index) => (
             <div>
-              <p className="text-2xl font-semibold">
+              <p className="text-sm md:text-2xl font-semibold">
                 <CountAnimate
                   number={value.number}
                   value={value}
                   duration={2}
-                  Cs={'text-2xl font-mont'}
+                  Cs={'text-sm md:text-lg xl:text-2xl font-mont'}
                   isInView={isInView}
                 />
               </p>
 
-              <p className="text-white/20">{value.desc}</p>
+              <p className="text-white/20 text-[.5rem] md:text-[.7rem] xl:text-lg">
+                {value.desc}
+              </p>
             </div>
           ))}
         </div>

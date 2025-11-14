@@ -2,14 +2,14 @@ import { Check } from 'lucide-react'
 import ProjectBlock from '@/components/project-block'
 export default function Projects() {
   return (
-    <div className="w-full h-screen px-18 pt-18">
+    <div className="w-full h-full px-4 md:px-8 xl:px-18 pt-18 pb-4">
       <div className="flex justify-between">
-        <h2 className="text-white text-6xl font-bold">
+        <h2 className="text-white text-2xl md:text-6xl font-bold">
           My Completed <br /> Projects
         </h2>
         <SuccessComponents />
       </div>
-      <div className="grid grid-cols-2 mt-12 gap-x-6">
+      <div className="grid md:grid-cols-2 mt-12 gap-6">
         <ProjectBlock
           status={false}
           title={'Maintenance Website KCIC'}

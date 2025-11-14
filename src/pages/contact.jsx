@@ -5,11 +5,11 @@ import { Mail, MapPin } from 'lucide-react'
 import { FaInstagram } from 'react-icons/fa'
 export default function Contact() {
   return (
-    <div className="h-full w-full mt-8 pl-18 py-8 pb-0 relative">
+    <div className="h-full w-full md:mt-0 md:pl-8 xl:pl-18 md:py-8 relative mt-42 p-4 pb-0 md:pb-0">
       <BackgroundCircle cs={'right-1 z-10'} />
-      <div className="grid grid-cols-2 h-full gap-x-6">
-        <div className="flex flex-col justify-center pt-0">
-          <p className="text-white text-[4rem] font-medium tracking-tighter leading-18">
+      <div className="grid md:grid-cols-2 h-full gap-x-6">
+        <div className="flex flex-col justify-end 2xl:justify-center  pt-0 pb-4 bg">
+          <p className="text-white text-5xl md:text-[4rem]  font-medium tracking-tighter leading-18">
             LET'S WORK TOGETHER
           </p>
           <form className="flex flex-col gap-y-6 mt-8 w-full">
@@ -38,8 +38,12 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="h-full">
-          <img src="Building_web.webp" alt="" className="grayscale-100" />
+        <div className="p-0 flex items-end">
+          <img
+            src="Building_web.webp"
+            alt=""
+            className="grayscale-100 object-center"
+          />
         </div>
       </div>
     </div>

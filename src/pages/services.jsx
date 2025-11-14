@@ -2,27 +2,22 @@ import CardSwitch from '@/components/card-switch'
 import SwitchCard from '@/utils/switch-card'
 import List from '@/components/list'
 import { useState } from 'react'
-import { FaReact, FaTachometerAlt } from 'react-icons/fa'
+import {
+  FaReact,
+  FaTachometerAlt,
+  FaServer,
+  FaDatabase,
+  FaCloudUploadAlt,
+} from 'react-icons/fa'
 import { IoIosResize } from 'react-icons/io'
-import { MdComputer } from 'react-icons/md'
+import { MdComputer, MdSecurity, MdBugReport } from 'react-icons/md'
+import { TbApi } from 'react-icons/tb'
 import { CgComponents } from 'react-icons/cg'
 import { Route } from 'lucide-react'
+import { easeInOut, motion, AnimatePresence } from 'motion/react'
 
 export default function Services() {
   const [activeCard, setActiveCard] = useState(1)
-  const data = [
-    {
-      id: 1,
-      title: 'Front End',
-
-      desc: 'Start to develop your interface website with a solid layout and clean code.',
-    },
-    {
-      id: 2,
-      title: 'Back End',
-      desc: 'andle logic, data, and performance — everything that keeps your app running behind the scenes.',
-    },
-  ]
 
   const dataListFr = [
     {
@@ -57,18 +52,69 @@ export default function Services() {
     },
   ]
 
-  const handleClickCard = (id) => {
+  const dataListBe = [
+    {
+      list: 'RESTful API Development',
+      icon: <FaServer size={32} />,
+      desc: 'Design and build secure RESTful APIs using Node.js & Express to handle business logic and dynamic web features.',
+    },
+    {
+      list: 'Database Design & Management',
+      icon: <FaDatabase size={32} />,
+      desc: 'Structure and optimize MongoDB or MySQL databases with proper indexing and efficient query handling.',
+    },
+    {
+      list: 'Authentication & Authorization',
+      icon: <MdSecurity size={32} />,
+      desc: 'Implement secure user authentication using JWT, OAuth, bcrypt, and session-based methods.',
+    },
+    {
+      list: 'CRUD API Development',
+      icon: <TbApi size={32} />,
+      desc: 'Build clean and scalable CRUD endpoints using MVC architecture for fast development.',
+    },
+    {
+      list: 'Cloud & Deployment',
+      icon: <FaCloudUploadAlt size={32} />,
+      desc: 'Deploy production-grade applications using Nginx, PM2, SSL, and VPS environment optimization.',
+    },
+    {
+      list: 'Error Handling & Logging',
+      icon: <MdBugReport size={32} />,
+      desc: 'Implement centralized error handlers and logging systems for easier debugging and backend stability.',
+    },
+  ]
+
+  const data = [
+    {
+      id: 1,
+      title: 'Front End',
+
+      desc: 'Start to develop your interface website with a solid layout and clean code.',
+      show: dataListFr,
+    },
+    {
+      id: 2,
+      title: 'Back End',
+      desc: 'andle logic, data, and performance — everything that keeps your app running behind the scenes.',
+      show: dataListBe,
+    },
+  ]
+  const [contentShow, setContentShow] = useState(dataListFr)
+
+  const handleClickCard = (id, show) => {
     setActiveCard(id)
+    setContentShow(show)
   }
 
   return (
     <div
       className="w-full h-full pt-18 bg-white/5 
                  backdrop-blur-xl border border-white/20 
-                 rounded-4xl shadow-lg px-18 pb-14"
+                 rounded-4xl shadow-lg p-4 md:px-8 xl:px-18 pb-14 md:mt-0 mt-82"
     >
       <div className="w-full">
-        <h2 className="text-white font-bold text-6xl">
+        <h2 className="text-white font-bold md:text-6xl text-2xl">
           What Can I
           <span className="bg-lime-400 ml-3 px-2 py-1 rounded-lg text-black">
             Do
@@ -76,26 +122,52 @@ export default function Services() {
         </h2>
       </div>
 
-      <article className="grid grid-cols-2 mt-6 gap-4 gap-x-12">
+      <article className="grid md:grid-cols-2 mt-6 gap-4 xl:gap-x-12">
         <div>
-          <div className="grid grid-cols-2 grid-rows-3 gap-3 h-full">
-            {dataListFr.map((val, index) => (
-              <List dataList={val.list} desc={val.desc} icon={val.icon} />
-            ))}
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeCard} // ⬅️ kalau pindah Frontend ↔ Backend, ini berubah → trigger exit + enter
+              className="grid grid-cols-2 grid-rows-3 gap-3 h-full"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{
+                duration: 0.4,
+                ease: easeInOut,
+              }}
+            >
+              {contentShow.map((val, index) => (
+                <motion.div
+                  key={val.list} // ⬅️ jangan pakai key={contentShow}, itu sama untuk semua item
+                  className="p-3 px-3 bg-neutral-100/2 backdrop-blur-xl rounded-lg text-white text-2xl 
+          tracking-wide border-1 border-white/30 flex flex-col items-center"
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{
+                    duration: 0.3,
+                    delay: index * 0.7, // sedikit stagger biar lebih hidup
+                    type: 'spring',
+                    ease: easeInOut,
+                  }}
+                >
+                  <List dataList={val.list} desc={val.desc} icon={val.icon} />
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 ">
+        <div className="grid md:grid-cols-3 gap-4 ">
           <img
             src="services.webp"
             alt=""
-            className="w-full h-full object-cover rounded-2xl rounded-br-5xl grayscale col-span-2"
+            className="w-full h-full object-cover rounded-2xl rounded-br-5xl grayscale col-span-2 hidden md:block"
           />
 
           <div className="gap-y-3 grid grid-rows-2">
             {data.map((value, index) => (
               <SwitchCard
-                onClick={() => handleClickCard(value.id)}
+                onClick={() => handleClickCard(value.id, value.show)}
                 isActive={activeCard === value.id}
               >
                 <CardSwitch data={value} />

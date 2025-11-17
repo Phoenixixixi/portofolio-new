@@ -3,10 +3,20 @@ import { motion, useInView, AnimatePresence } from 'motion/react'
 import { useState, useEffect, useRef } from 'react'
 export default function About() {
   const svgs = [
-    { name: 'linkedin', src: '/svg/lk.svg', img: '/screen/linkedin.webp' },
-    { name: 'gmail', src: '/svg/gm.svg' },
-    { name: 'instagram', src: '/svg/ig.svg', img: '/screen/instagram.webp' },
-    { name: 'github', src: '/svg/gb.svg' },
+    {
+      name: 'linkedin',
+      src: '/svg/lk.svg',
+      img: '/screen/linkedin.webp',
+      link: 'https://www.linkedin.com/in/muhammad-dustin/',
+    },
+
+    {
+      name: 'instagram',
+      src: '/svg/ig.svg',
+      img: '/screen/instagram.webp',
+      link: 'https://www.instagram.com/daastin.m/',
+    },
+    { name: 'github', src: '/svg/gb.svg', img: '/screen/github.webp' },
   ]
 
   const [order, setOrder] = useState(svgs)
@@ -74,6 +84,7 @@ export default function About() {
                       type: 'spring',
                       damping: 20,
                       stiffness: 300,
+                      duration: 3,
                     }}
                     className="active:scale-85 duration-100"
                     onClick={() => {
@@ -82,7 +93,7 @@ export default function About() {
                       }
                     }}
                   >
-                    <GlowBox src={value.src} />
+                    <GlowBox src={value.src} link={value.link} />
                   </motion.div>
                 ))}
               </motion.div>

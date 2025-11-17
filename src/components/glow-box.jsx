@@ -1,6 +1,6 @@
 import { BackgroundGradientAnimation } from './ui/background-gradient-animation'
 import './ui/styles/bg-animate.css'
-export default function Index({ src }) {
+export default function Index({ src, link }) {
   return (
     <BackgroundGradientAnimation
       className={'w-full h-full cursor-pointer '}
@@ -23,6 +23,7 @@ export default function Index({ src }) {
         md:p-4
         xl:p-0
         "
+        onClick={() => redirect(link)}
       >
         {/* optional efek highlight halus */}
 
@@ -30,4 +31,13 @@ export default function Index({ src }) {
       </div>
     </BackgroundGradientAnimation>
   )
+}
+
+function redirect(link) {
+  if (link) {
+    window.location.href = link
+    return
+  } else {
+    return
+  }
 }

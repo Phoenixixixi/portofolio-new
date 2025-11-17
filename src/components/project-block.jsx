@@ -16,7 +16,10 @@ export default function ProjectBlock({
       <p className="text-3xl mt-8 text-white font-semibold">{title}</p>
       <p className="text-sm text-white mt-4 h-24">{children}</p>
 
-      <button className="bg-lime-400 px-3 py-1 mt-4 rounded-full flex items-center">
+      <button
+        className="bg-lime-400 px-3 py-1 mt-4 rounded-full flex items-center cursor-pointer"
+        onClick={() => redirect(link)}
+      >
         {icon}
         <span className="ml-2 text-black font-medium">{label}</span>
       </button>

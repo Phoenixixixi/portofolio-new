@@ -47,9 +47,13 @@ export default function Home() {
               products with React, Node, and a touch of AI.
             </p>
 
-            <button className="md:mt-4 xl:mt-8 bg-lime-300 px-4 py-2 rounded-full font-semibold shadow-xl hidden md:block md:text-[.6rem] xl:text-sm">
+            <a
+              className="md:mt-4 xl:mt-8 bg-lime-300 px-4 py-2 rounded-full font-semibold shadow-xl hidden md:block md:text-[.6rem] xl:text-sm max-w-42"
+              href="/Muhammad_Dustin_CV.pdf"
+              download
+            >
               Download My CV
-            </button>
+            </a>
           </motion.div>
 
           {/* RIGHT NAME */}

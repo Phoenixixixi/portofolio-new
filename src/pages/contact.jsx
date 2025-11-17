@@ -22,7 +22,10 @@ export default function Contact() {
     messagePost(message)
   }
   return (
-    <div className="h-full w-full md:mt-0 md:pl-8 xl:pl-18 md:py-32 relative mt-42 p-4 pb-0 md:pb-0">
+    <div
+      className="h-full w-full md:mt-0 md:pl-8 xl:pl-18 md:py-32 relative mt-42 p-4 pb-0 md:pb-0"
+      id="Contact"
+    >
       <BackgroundCircle cs={'right-1 z-10'} />
       <div className="grid md:grid-cols-2 h-full gap-x-6">
         <div className="flex flex-col justify-end 2xl:justify-center  pt-0 pb-4 bg">

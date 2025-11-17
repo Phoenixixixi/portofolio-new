@@ -3,11 +3,11 @@ import Magnetic from './magnetic'
 
 export const Navigation = forwardRef(function index(props, ref) {
   const navigationName = [
-    { name: 'Projects' },
-    { name: 'About' },
+    { name: 'Projects', id: '#Projects' },
+    { name: 'About', id: '#About' },
     { name: 'MUGIWARA' },
-    { name: 'Services' },
-    { name: 'Contact' },
+    { name: 'Services', id: '#Services' },
+    { name: 'Contact', id: '#Contact' },
   ]
   return (
     <Magnetic>
@@ -21,14 +21,15 @@ export const Navigation = forwardRef(function index(props, ref) {
         ref={ref}
       >
         {navigationName.map((val, index) => (
-          <button
+          <a
             key={index}
             className={`cursor-pointer hover:text-lime-400 transition ${
               index === 2 ? 'font-extrabold italic text-lime-400' : 'font-light'
             }`}
+            href={val.id}
           >
             {val.name}
-          </button>
+          </a>
         ))}
       </nav>
     </Magnetic>

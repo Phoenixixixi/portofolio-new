@@ -2,7 +2,10 @@ import { Check } from 'lucide-react'
 import ProjectBlock from '@/components/project-block'
 export default function Projects() {
   return (
-    <div className="w-full h-full px-4 md:px-8 xl:px-18 py-32 pb-4">
+    <div
+      className="w-full h-full px-4 md:px-8 xl:px-18 py-32 pb-4"
+      id="Projects"
+    >
       <div className="flex justify-between">
         <h2 className="text-white text-2xl md:text-6xl font-bold">
           My Completed <br /> Projects

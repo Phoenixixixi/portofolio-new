@@ -24,7 +24,7 @@ export default function About() {
   }, [])
 
   return (
-    <div className="w-full lg:h-full xl:h-full mt-18 md:py-44">
+    <div className="w-full lg:h-full xl:h-full mt-18 md:py-44" id="About">
       <div className="grid md:grid-cols-3 gap-x-6" ref={ref}>
         <motion.div
           className="flex justify-center md:justify-start items-start w-full"

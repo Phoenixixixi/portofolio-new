@@ -116,6 +116,7 @@ export default function Services() {
       className="w-full h-full pt-18 bg-white/5 
                  backdrop-blur-xl border border-white/20 
                  rounded-4xl shadow-lg p-4 md:px-8 xl:px-18 pb-14 md:mt-0"
+      id="Services"
     >
       <div className="w-full">
         <h2 className="text-white font-bold md:text-6xl text-2xl">

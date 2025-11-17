@@ -1,12 +1,11 @@
 import GlowBox from '@/components/glow-box.jsx'
-import Player from '@/components/player'
 import { motion, useInView, AnimatePresence } from 'motion/react'
 import { useState, useEffect, useRef } from 'react'
 export default function About() {
   const svgs = [
-    { name: 'linkedin', src: '/svg/lk.svg', img: '/screen/linkedin.jpeg' },
+    { name: 'linkedin', src: '/svg/lk.svg', img: '/screen/linkedin.webp' },
     { name: 'gmail', src: '/svg/gm.svg' },
-    { name: 'instagram', src: '/svg/ig.svg', img: '/screen/instagram.jpeg' },
+    { name: 'instagram', src: '/svg/ig.svg', img: '/screen/instagram.webp' },
     { name: 'github', src: '/svg/gb.svg' },
   ]
 
@@ -25,7 +24,7 @@ export default function About() {
   }, [])
 
   return (
-    <div className="w-full lg:h-full xl:h-screen mt-18 md:py-24">
+    <div className="w-full lg:h-full xl:h-full mt-18 md:py-44">
       <div className="grid md:grid-cols-3 gap-x-6" ref={ref}>
         <motion.div
           className="flex justify-center md:justify-start items-start w-full"

@@ -1,5 +1,4 @@
 import { Eye, EyeOff } from 'lucide-react'
-import { useState } from 'react'
 
 export default function ProjectBlock({ status = true, children, title, src }) {
   const icon = status ? <Eye /> : <EyeOff />

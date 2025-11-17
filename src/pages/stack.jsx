@@ -1,6 +1,6 @@
 import MernText from '@/components/mern-text'
 import Card from '@/components/card-logo'
-import { useTransform, motion, useInView } from 'motion/react'
+import { useInView } from 'motion/react'
 import { useRef } from 'react'
 
 export default function Stack() {
@@ -32,7 +32,7 @@ export default function Stack() {
   ]
 
   return (
-    <div ref={ref} className="w-full h-full md:pb-12">
+    <div ref={ref} className="w-full h-full md:py-42">
       <MernText>
         <div className="grid md:grid-cols-4 mt-14 gap-x-7 gap-y-7">
           {data.map((value, index) => (

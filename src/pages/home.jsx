@@ -2,7 +2,7 @@ import { Navigation } from '@/components/navigation'
 import StickyCursor from '../components/stickyCursor'
 import { useRef, createContext, useState } from 'react'
 import { isHoverText } from '../utils/isHover' // ✅ import dari file context
-import { easeIn, easeInOut, motion } from 'motion/react'
+import { motion } from 'motion/react'
 
 export default function Home() {
   const refSticky = useRef(null)
@@ -20,9 +20,10 @@ export default function Home() {
         <nav className="w-full  flex justify-center">
           <Navigation ref={refSticky} />
         </nav>
+
         <section className="pt-12 md:pt-24 relative">
           <motion.h1
-            className={` text-2xl md:text-4xl xl:text-6xl font-semibold text-center ${
+            className={` text-2xl md:text-4xl xl:text-6xl font-semibold text-center font-montserrat ${
               isHover ? 'text-white' : 'text-black'
             } duration-300`}
             initial={{ y: 300, opacity: 0 }}
@@ -68,9 +69,10 @@ export default function Home() {
 
           {/* AVATAR CENTERED */}
           <motion.img
-            src="/cartoon.png"
+            src="/cartoon.webp"
             alt="avatar"
             className="absolute left-1/2 -translate-x-1/2 bottom-[80px] md:bottom-[300px] xl:bottom-[360px] max-w-[340px] xl:w-[340px] 2xl:w-[420px] z-10"
+            fetchpriority="high"
           />
 
           {/* BACK CIRCLES */}

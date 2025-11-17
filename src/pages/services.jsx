@@ -2,18 +2,22 @@ import CardSwitch from '@/components/card-switch'
 import SwitchCard from '@/utils/switch-card'
 import List from '@/components/list'
 import { useState } from 'react'
+
 import {
-  FaReact,
-  FaTachometerAlt,
-  FaServer,
-  FaDatabase,
-  FaCloudUploadAlt,
-} from 'react-icons/fa'
-import { IoIosResize } from 'react-icons/io'
-import { MdComputer, MdSecurity, MdBugReport } from 'react-icons/md'
-import { TbApi } from 'react-icons/tb'
-import { CgComponents } from 'react-icons/cg'
-import { Route } from 'lucide-react'
+  Route,
+  Server,
+  Database,
+  ShieldCheck,
+  Braces,
+  Cloud,
+  Bug,
+  Globe,
+  Scaling,
+  Dock,
+  Component,
+  Wrench,
+  ClockArrowUp,
+} from 'lucide-react'
 import { easeInOut, motion, AnimatePresence } from 'motion/react'
 
 export default function Services() {
@@ -22,32 +26,32 @@ export default function Services() {
   const dataListFr = [
     {
       list: 'React.js Development',
-      icon: <FaReact size={32} />,
+      icon: <Globe size={32} />,
       desc: 'Build modern, high-performance web apps using the React ecosystem — focusing on reusable components and clean architecture.',
     },
     {
       list: 'Responsive Web Design',
-      icon: <IoIosResize size={32} />,
+      icon: <Scaling size={32} />,
       desc: 'Ensure your website looks perfect on every device — from desktop to mobile — with adaptive layouts and smooth interactions.',
     },
     {
       list: 'Landing Page',
-      icon: <MdComputer size={32} />,
+      icon: <Dock size={32} />,
       desc: 'Design engaging, conversion-focused landing pages that load fast and deliver a memorable first impression.',
     },
     {
       list: 'Reusable Component',
-      icon: <CgComponents size={32} />,
+      icon: <Component size={32} />,
       desc: 'Develop modular UI components that can be reused across pages for consistent design and faster iteration.',
     },
     {
       list: 'State Management',
-      icon: <Route size={32} />,
+      icon: <Wrench size={32} />,
       desc: 'Implement predictable and maintainable data flow using Redux Toolkit or Context API to keep your UI synchronized.',
     },
     {
       list: 'Performance Optimization',
-      icon: <FaTachometerAlt size={32} className="" />,
+      icon: <ClockArrowUp size={32} className="" />,
       desc: 'Boost website speed and efficiency through code optimization, image compression, for a smoother user experience.',
     },
   ]
@@ -55,32 +59,32 @@ export default function Services() {
   const dataListBe = [
     {
       list: 'RESTful API Development',
-      icon: <FaServer size={32} />,
+      icon: <Server size={32} />,
       desc: 'Design and build secure RESTful APIs using Node.js & Express to handle business logic and dynamic web features.',
     },
     {
       list: 'Database Design & Management',
-      icon: <FaDatabase size={32} />,
+      icon: <Database size={32} />,
       desc: 'Structure and optimize MongoDB or MySQL databases with proper indexing and efficient query handling.',
     },
     {
       list: 'Authentication & Authorization',
-      icon: <MdSecurity size={32} />,
+      icon: <ShieldCheck size={32} />,
       desc: 'Implement secure user authentication using JWT, OAuth, bcrypt, and session-based methods.',
     },
     {
       list: 'CRUD API Development',
-      icon: <TbApi size={32} />,
+      icon: <Braces size={32} />,
       desc: 'Build clean and scalable CRUD endpoints using MVC architecture for fast development.',
     },
     {
       list: 'Cloud & Deployment',
-      icon: <FaCloudUploadAlt size={32} />,
+      icon: <Cloud size={32} />,
       desc: 'Deploy production-grade applications using Nginx, PM2, SSL, and VPS environment optimization.',
     },
     {
       list: 'Error Handling & Logging',
-      icon: <MdBugReport size={32} />,
+      icon: <Bug size={32} />,
       desc: 'Implement centralized error handlers and logging systems for easier debugging and backend stability.',
     },
   ]
@@ -111,7 +115,7 @@ export default function Services() {
     <div
       className="w-full h-full pt-18 bg-white/5 
                  backdrop-blur-xl border border-white/20 
-                 rounded-4xl shadow-lg p-4 md:px-8 xl:px-18 pb-14 md:mt-0 mt-82"
+                 rounded-4xl shadow-lg p-4 md:px-8 xl:px-18 pb-14 md:mt-0"
     >
       <div className="w-full">
         <h2 className="text-white font-bold md:text-6xl text-2xl">
@@ -162,6 +166,7 @@ export default function Services() {
             src="services.webp"
             alt=""
             className="w-full h-full object-cover rounded-2xl rounded-br-5xl grayscale col-span-2 hidden md:block"
+            fetchpriority="high"
           />
 
           <div className="gap-y-3 grid grid-rows-2">

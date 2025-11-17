@@ -24,7 +24,7 @@ export const BackgroundGradientAnimation = ({
   const [curY, setCurY] = useState(0)
   const [tgX, setTgX] = useState(0)
   const [tgY, setTgY] = useState(0)
-  const [hover, setHover] = useState(false)
+
   useEffect(() => {
     document.body.style.setProperty(
       '--gradient-background-start',

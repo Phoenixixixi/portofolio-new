@@ -23,7 +23,7 @@ export default function Count() {
     { number: 100, additional: 'passion', desc: 'for clean code', simbol: '%' },
   ]
   return (
-    <div className="w-full md:my-24 my-42" ref={ref}>
+    <div className="w-full md:py-34 py-42" ref={ref}>
       <GlowingBlock>
         <div className="grid md:grid-cols-4 grid-cols-2 gap-28 text-white">
           {list.map((value, index) => (

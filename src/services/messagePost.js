@@ -1,6 +1,6 @@
 export default async function messagePost(message) {
   try {
-    const url = 'http://192.168.1.2:3005/api/message/add'
+    const url = 'http://localhost:3005/api/message/add'
     const res = await fetch(url, {
       method: 'POST',
       headers: {

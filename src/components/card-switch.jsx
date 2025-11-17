@@ -1,4 +1,3 @@
-import { ChartSpline } from 'lucide-react'
 export default function CardSwitch({ data }) {
   return (
     <div>

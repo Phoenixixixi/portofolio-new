@@ -8,14 +8,14 @@ export default async function messagePost(message) {
       },
       body: JSON.stringify(message),
     })
+
     if (!res.ok) {
-      throw new Error()
+      throw new Error('Request failed')
     }
-    console.log(await res.json())
-    data = await res.json()
+
+    const data = await res.json()
     return data.success
   } catch (err) {
-    console.error(err)
     return false
   }
 }

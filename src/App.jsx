@@ -9,7 +9,7 @@ import Contact from './pages/contact'
 import Footer from './pages/footer'
 import Alert from './components/alert'
 import { useState } from 'react'
-
+import { Analytics } from '@vercel/analytics/react'
 function App() {
   const [showAlert, setShowAlert] = useState({
     show: false,
@@ -31,6 +31,7 @@ function App() {
   }
   return (
     <>
+      <Analytics />
       <Alert show={showAlert.show} status={showAlert.status} />
       <div className="flex flex-col">
         <Home />

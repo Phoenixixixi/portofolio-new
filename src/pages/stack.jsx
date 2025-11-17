@@ -32,7 +32,7 @@ export default function Stack() {
   ]
 
   return (
-    <div ref={ref} className="w-full h-full md:py-42">
+    <div ref={ref} className="w-full h-full md:py-42 py-34">
       <MernText>
         <div className="grid md:grid-cols-4 mt-14 gap-x-7 gap-y-7">
           {data.map((value, index) => (

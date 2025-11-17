@@ -115,7 +115,7 @@ export default function Services() {
     <div
       className="w-full h-full pt-18 bg-white/5 
                  backdrop-blur-xl border border-white/20 
-                 rounded-4xl shadow-lg p-4 md:px-8 xl:px-18 pb-14 md:mt-0"
+                 rounded-4xl shadow-lg p-4 md:px-8 xl:px-18 pb-14 md:mt-0 mt-52"
       id="Services"
     >
       <div className="w-full">

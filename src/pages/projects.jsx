@@ -12,7 +12,7 @@ export default function Projects() {
         </h2>
         <SuccessComponents />
       </div>
-      <div className="grid md:grid-cols-2 mt-12 gap-6">
+      <div className="grid md:grid-cols-2 mt-12 gap-18">
         <ProjectBlock
           status={false}
           title={'Maintenance Website KCIC'}
@@ -26,6 +26,7 @@ export default function Projects() {
           status={true}
           title={'MindsetNgedit IPB University'}
           src={'Affinity.webp'}
+          link={'https://mindsetngedit.com'}
         >
           MindsetNgedit adalah creative & digital partner yang membantu brand,
           kampus, komunitas, dan UMKM tampil lebih rapi, modern, dan profesional

@@ -7,10 +7,31 @@ import Services from './pages/services'
 import Projects from './pages/projects'
 import Contact from './pages/contact'
 import Footer from './pages/footer'
+import Alert from './components/alert'
+import { useState } from 'react'
 
 function App() {
+  const [showAlert, setShowAlert] = useState({
+    show: false,
+    status: '',
+  })
+  const triggerAlert = (status) => {
+    setShowAlert((prev) => ({
+      ...prev,
+      show: true,
+      status,
+    }))
+    setTimeout(() => {
+      setShowAlert((prev) => ({
+        ...prev,
+        show: false,
+        status: '',
+      }))
+    }, 9000)
+  }
   return (
     <>
+      <Alert show={showAlert.show} status={showAlert.status} />
       <div className="flex flex-col">
         <Home />
       </div>
@@ -27,7 +48,7 @@ function App() {
         <Projects />
       </div>
       <div>
-        <Contact />
+        <Contact triggerAlert={triggerAlert} />
       </div>
       {/* <footer>
         <Footer />

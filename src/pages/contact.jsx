@@ -5,7 +5,7 @@ import { Mail, MapPin } from 'lucide-react'
 import { FaInstagram } from 'react-icons/fa'
 import { useState } from 'react'
 import messagePost from '@/services/messagePost'
-export default function Contact() {
+export default function Contact({ triggerAlert }) {
   const [message, setMessage] = useState({
     name: '',
     email: '',
@@ -17,9 +17,10 @@ export default function Contact() {
       [field]: e.target.value,
     }))
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    messagePost(message)
+    const result = await messagePost(message)
+    triggerAlert(result)
   }
   return (
     <div

@@ -8,7 +8,9 @@ export default function List({ dataList, desc, icon }) {
       <p className="xl:text-sm text-[.7rem] md:text-[.9rem] text-center font-semibold mt-4">
         {dataList}
       </p>
-      <p className="text-justify mt-2 xl:text-sm text-[.7rem]">{desc}</p>
+      <p className="text-start mt-2 xl:text-sm text-[.7rem] line-clamp-3">
+        {desc}
+      </p>
     </div>
   )
 }

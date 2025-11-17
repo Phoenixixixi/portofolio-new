@@ -1,6 +1,6 @@
 export default async function messagePost(message) {
   try {
-    const url = 'http://localhost:3005/api/message/add'
+    const url = 'https://mindsetngedit.com/porto-api/api/message/add'
     const res = await fetch(url, {
       method: 'POST',
       headers: {
@@ -12,7 +12,10 @@ export default async function messagePost(message) {
       throw new Error()
     }
     console.log(await res.json())
+    data = await res.json()
+    return data.success
   } catch (err) {
     console.error(err)
+    return false
   }
 }
